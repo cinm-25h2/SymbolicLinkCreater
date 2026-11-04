@@ -1,0 +1,176 @@
+﻿<!-- Copyright (C) 2026 cinm-25h2
+     SPDX-License-Identifier: GPL-3.0-only -->
+    
+<Window x:Class="SymbolicLinkCreater.AboutWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SymbolicLinkCreater"
+        mc:Ignorable="d"
+        xmlns:properties="clr-namespace:SymbolicLinkCreater.Properties"
+        Title="About" 
+        Height="350" MaxHeight="350" MinHeight="350"
+        Width="500" MaxWidth="500" MinWidth="500">
+
+    <Grid
+        Height="Auto"
+        Width="Auto">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="60"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <Grid
+            Height="Auto"
+            Width="Auto"
+            Grid.Column="0"
+            Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Image
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Height="40"
+                Width="40"
+                Margin="10,10,0,0"
+                Grid.Column="0"
+                Grid.Row="0"
+                Source="Icon.jpg"/>
+        </Grid>
+
+        <Grid
+            Grid.Column="1"
+            Grid.Row="0"
+            Height="Auto"
+            Width="Auto">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <TextBlock
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Grid.Row="0"
+                Height="40"
+                Width="Auto"
+                FontSize="15"
+                Margin="10,10,0,0"
+                TextWrapping="Wrap"
+                Text="SymbolicLinkCreater v0.1.0 alpha&#x0a;Oct 28 2026 (64-bit)"/>
+
+            <TextBlock
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Grid.Row="2"
+                Height="Auto"
+                Width="Auto"
+                FontSize="12"
+                Margin="10,0,0,0"
+                TextWrapping="Wrap"
+                Text="Copyright©2026 cinm-25h2.&#x0a;This program comes with ABSOLUTELY NO WARRANTY.&#x0a;This program is licensed under the GNU General Public License, version 3.0.&#x0a;You may redistribute it under the terms of the GNU General Public License."/>
+
+            <TextBlock
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Grid.Row="1"
+                Height="20"
+                Width="Auto"
+                FontSize="15"
+                Margin="10,5,0,0">
+                <Hyperlink NavigateUri = "https://www.cinm.me/"
+                           RequestNavigate = "Hyperlink_RequestNavigate">
+                           <Hyperlink.Style>
+                                <Style TargetType="Hyperlink">
+                                    <Setter Property="Foreground" Value="{Binding Foreground,RelativeSource={RelativeSource FindAncestor,AncestorType=TextBlock}}"/>
+                                </Style>
+                           </Hyperlink.Style>      
+                           https://www.cinm.me
+                </Hyperlink>
+            </TextBlock>
+
+            <TextBlock
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Grid.Row="1"
+                Height="20"
+                Width="Auto"
+                FontSize="15"
+                Margin="10,25,0,0">
+                <Hyperlink NavigateUri = "https://github.com/cinm-25h2"
+                           RequestNavigate = "Hyperlink_RequestNavigate">
+                           <Hyperlink.Style>
+                                <Style TargetType="Hyperlink">
+                                    <Setter Property="Foreground" Value="{Binding Foreground,RelativeSource={RelativeSource FindAncestor,AncestorType=TextBlock}}"/>
+                                </Style>
+                           </Hyperlink.Style>     
+                           Github
+                </Hyperlink>
+            </TextBlock>
+
+            <TextBlock
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Grid.Row="2"
+                Height="20"
+                Width="Auto"
+                FontSize="12"
+                Margin="10,64,0,0">
+                <Hyperlink Click="Hyperlink_LookLICENSE">
+                           <Hyperlink.Style>
+                                <Style TargetType="Hyperlink">
+                                    <Setter Property="Foreground" Value="{Binding Foreground,RelativeSource={RelativeSource FindAncestor,AncestorType=TextBlock}}"/>
+                                </Style>
+                           </Hyperlink.Style>     
+                           See the Full License.
+                </Hyperlink>
+            </TextBlock>
+
+            <TextBlock
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Grid.Row="2"
+                Height="20"
+                Width="Auto"
+                FontSize="12"
+                Margin="150,64,0,0">
+                <Hyperlink Click="Hyperlink_LookTPL">
+                           <Hyperlink.Style>
+                                <Style TargetType="Hyperlink">
+                                    <Setter Property="Foreground" Value="{Binding Foreground,RelativeSource={RelativeSource FindAncestor,AncestorType=TextBlock}}"/>
+                                </Style>
+                           </Hyperlink.Style>     
+                           See the Third-Party License.
+                </Hyperlink>
+            </TextBlock>
+
+
+        </Grid>
+
+        <Border
+            BorderBrush="Gray"
+            BorderThickness="0.25"
+            VerticalAlignment="Bottom"
+            Grid.Row="0"
+            Grid.ColumnSpan="2"/>
+
+        <Button x:Name="btnOK"
+            Content="{x:Static properties:Resources.btn_OK}"
+            Click="btn_OK"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Right"
+            Margin="0,0,10,0"
+            Width="60"
+            Height="20"
+            Grid.Column="1"
+            Grid.Row="1"/>
+    </Grid>
+</Window>
